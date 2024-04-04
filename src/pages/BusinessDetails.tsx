@@ -113,6 +113,7 @@ const Business = () => {
           <p>Category: {data?.category}</p>
           <p>Total reviews: {data?.totalReviews}</p>
           <p>Total rating: {data?.averageRating}</p>
+          <p>Status: {data?.status}</p>
           <h3 className="font-semibold my-2">User info:</h3>
           <Link to={`/users/${data?.userId?._id}`}>
             Name: {data?.userId?.firstName + ' ' + data?.userId?.lastName}

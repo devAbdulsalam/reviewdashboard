@@ -1,5 +1,4 @@
 import { useState, useRef, Suspense } from 'react';
-import DocumentViewer from './DocViewer';
 
 const Card = ({ data }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -30,15 +29,15 @@ const Card = ({ data }) => {
             fallback={
               <img
                 src={`https://ui-avatars.com/api/?name=${data?.name}`}
-                alt="document"
-                className="h-full object-contain rounded-t-xl"
+                alt="business logo"
+                className="object-contain rounded-t-xl"
               />
             }
           >
             <img
               src={`${data?.logo?.url}`}
-              alt="document"
-              className="h-full object-contain rounded-t-xl"
+              alt="business logo"
+              className=" object-contain rounded-t-xl"
             />
           </Suspense>
         </>
