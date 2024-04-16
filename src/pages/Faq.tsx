@@ -49,10 +49,10 @@ const Faq = () => {
   };
   const handleSubmit = async () => {
     if (!title.trim()) {
-      return toast.error('question is required!');
+      return toast.error('Question is required!');
     }
     if (!answer.trim()) {
-      return toast.error('answer is required!');
+      return toast.error('Answer is required!');
     }
     const data: FormData = {
       question: title,
