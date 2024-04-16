@@ -24,7 +24,11 @@ const EditListing = () => {
     queryKey: ['listing', id],
     queryFn: () => fetchListing(info),
   });
-
+  const [productName, setProductName] = useState<string>(data?.productName);
+  const [claimed, setClaimed] = useState<string>(data?.claimed);
+  const [description, setDescription] = useState<string>(data?.description);
+  const [category, setCategory] = useState<string>(data?.category);
+  const [status, setStatus] = useState<string>(data?.status);
   useEffect(() => {
     if (data) {
       console.log(data);
@@ -34,13 +38,7 @@ const EditListing = () => {
       console.log(message);
     }
   }, [data, error, isError]);
-  const [productName, setProductName] = useState<string>(
-    data?.productName || '',
-  );
-  const [claimed, setClaimed] = useState<string>(data?.claimed);
-  const [description, setDescription] = useState<string>(data?.description);
-  const [category, setCategory] = useState<string>(data?.category);
-  const [status, setStatus] = useState<string>(data?.status);
+
   const handleCategoryChange = (
     event: React.ChangeEvent<HTMLSelectElement>,
   ) => {
