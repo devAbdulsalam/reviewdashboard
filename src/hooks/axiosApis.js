@@ -126,6 +126,85 @@ export const fetchListing = async (prop) => {
     return error;
   }
 };
+export const fetchAdverts = async (user) => {
+  try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${user?.token}`,
+      },
+    };
+    const { data } = await axios.get(`${apiUrl}/adverts`, config);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
+export const fetchAdvert = async (prop) => {
+  try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${prop?.token}`,
+      },
+    };
+    const { data } = await axios.get(`${apiUrl}/adverts/${prop.id}`, config);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
+export const fetchPricings = async (user) => {
+  try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${user?.token}`,
+      },
+    };
+    const { data } = await axios.get(`${apiUrl}/prices`, config);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
+export const fetchPrice = async (prop) => {
+  try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${prop?.token}`,
+      },
+    };
+    const { data } = await axios.get(`${apiUrl}/prices/${prop.id}`, config);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const fetchAmenities = async (user) => {
+  try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${user?.token}`,
+      },
+    };
+    const { data } = await axios.get(`${apiUrl}/amenities`, config);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
+export const fetchFaqs = async (user) => {
+  try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${user?.token}`,
+      },
+    };
+    const { data } = await axios.get(`${apiUrl}/faqs`, config);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
 export const fetchTransactions = async (prop) => {
   const { page, limit, token } = prop;
   try {

@@ -16,8 +16,14 @@ const Listings = lazy(() => import('../pages/Listings'));
 const Listing = lazy(() => import('../pages/Listing'));
 const AddListing = lazy(() => import('../pages/AddListing'));
 const EditListing = lazy(() => import('../pages/EditListing'));
+const Adverts = lazy(() => import('../pages/Adverts'));
+const Advert = lazy(() => import('../pages/Advert'));
 const AddNotice = lazy(() => import('../pages/AddNotice'));
 const Payment = lazy(() => import('../pages/Payment'));
+const Pricings = lazy(() => import('../pages/Pricings'));
+const AddPrice = lazy(() => import('../pages/AddPrice'));
+const Amenities = lazy(() => import('../pages/Amenities'));
+const Faq = lazy(() => import('../pages/Faq'));
 const FormElements = lazy(() => import('../pages/Form/FormElements'));
 const Transactions = lazy(() => import('../pages/Transactions'));
 
@@ -106,6 +112,36 @@ const coreRoutes = [
     path: '/listings/:id/edit-listing',
     title: 'Listing',
     component: EditListing,
+  },
+  {
+    path: '/adverts',
+    title: 'Adverts',
+    component: Adverts,
+  },
+  {
+    path: '/adverts/:id',
+    title: 'Advert',
+    component: Advert,
+  },
+  {
+    path: '/amenities',
+    title: 'amenities',
+    component: Amenities,
+  },
+  {
+    path: '/faqs',
+    title: 'faqs',
+    component: Faq,
+  },
+  {
+    path: '/add-price',
+    title: 'Add-price',
+    component: AddPrice,
+  },
+  {
+    path: '/pricings',
+    title: 'Pricings',
+    component: Pricings,
   },
   {
     path: '/payments',
