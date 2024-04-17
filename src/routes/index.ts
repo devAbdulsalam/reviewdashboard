@@ -54,11 +54,6 @@ const coreRoutes = [
     component: Report,
   },
   {
-    path: '/add-notice',
-    title: 'Add-notice',
-    component: AddNotice,
-  },
-  {
     path: '/admins',
     title: 'Admins',
     component: Admins,

@@ -146,6 +146,12 @@ const EditListing = () => {
                 </div>
               </div>
             </div>
+            <button
+              onClick={handleSubmit}
+              className="flex w-full justify-center rounded bg-primary p-3 mt-3 font-medium text-gray"
+            >
+              Update Listing
+            </button>
           </div>
           <div className="flex flex-col gap-9">
             {/* <!-- File upload --> */}
@@ -267,14 +273,14 @@ const EditListing = () => {
                 </div>
               </div>
             </div>
+            <button
+              onClick={handleSubmit}
+              className="flex w-full justify-center rounded bg-primary p-3 mt-3 font-medium text-gray"
+            >
+              Approve Listing
+            </button>
           </div>
         </div>
-        <button
-          onClick={handleSubmit}
-          className="flex w-full justify-center rounded bg-primary p-3 mt-3 font-medium text-gray"
-        >
-          Update Listing
-        </button>
       </div>
       {loading || isLoading ? <Loader /> : ''}
     </>

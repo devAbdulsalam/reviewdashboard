@@ -37,10 +37,12 @@ const Settings = () => {
   const [image, setImage] = useState(data?.logo?.url || '');
   const [imageName, setImageName] = useState('');
   const [imageFile, setImageFile] = useState('');
+  const navigate = useNavigate();
   useEffect(() => {
     if (data) {
       console.log(data);
       setName(data?.name);
+      navigate('/settings');
     }
     if (error) {
       const message = getError(error);
@@ -76,7 +78,7 @@ const Settings = () => {
   const handleStateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setState(event.target.value);
   };
-  const navigate = useNavigate();
+
   const queryClient = useQueryClient();
   const config = {
     headers: {
