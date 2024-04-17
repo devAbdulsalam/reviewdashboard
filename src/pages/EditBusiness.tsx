@@ -24,10 +24,12 @@ const EditBusiness = () => {
     queryKey: ['business', id],
     queryFn: () => fetchBusiness(info),
   });
-
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
   useEffect(() => {
     if (data) {
       console.log(data);
+      navigate(`/business/${id}/edit-business`);
     }
     if (error || isError) {
       const message = getError(error);
@@ -53,8 +55,6 @@ const EditBusiness = () => {
     setDescription(event.target.value);
   };
 
-  const navigate = useNavigate();
-  const queryClient = useQueryClient();
   const config = {
     headers: {
       Authorization: `Bearer ${user?.token || user.accessToken}`,

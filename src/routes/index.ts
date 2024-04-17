@@ -64,6 +64,11 @@ const coreRoutes = [
     component: Admins,
   },
   {
+    path: '/admins/:id',
+    title: 'Users',
+    component: User,
+  },
+  {
     path: '/users',
     title: 'Users',
     component: Users,

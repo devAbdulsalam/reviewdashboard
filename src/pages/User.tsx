@@ -16,6 +16,7 @@ const User = () => {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState('');
   const info = { token: user?.token || user.accessToken, id };
   const { isLoading, isError, error, data } = useQuery({
     queryKey: ['users', id],
@@ -24,7 +25,8 @@ const User = () => {
 
   useEffect(() => {
     if (data) {
-      console.log(data);
+      setResult(data.user || data);
+      navigate(`/users/${id}`);
     }
     if (error || isError) {
       const message = getError(error);
@@ -39,7 +41,8 @@ const User = () => {
     },
   };
   const handleEdit = () => {
-    navigate(`/users/${id}/edit-user`);
+    console.log(id);
+    // navigate(`/users/${id}/edit-user`);
   };
   const handelDelete = () => {
     Swal.fire({
@@ -87,7 +90,7 @@ const User = () => {
       <Breadcrumb pageName="User" />
       <div className="flex justify-between my-2 bg-white rounded p-2 px-2">
         <h2 className="text-title-md font-bold text-black dark:text-white">
-          Name: {data?.firstName + ' ' + data?.lastName}
+          Name: {result?.firstName + ' ' + result?.lastName}
         </h2>
         <div className="flex gap-2 text-center items-center">
           <EditTooltip handleEdit={handleEdit} />
@@ -97,9 +100,9 @@ const User = () => {
       <div>
         <h3 className="font-semibold mb-2">User info:</h3>
         <div>
-          <p>User role: {data?.role}</p>
-          <p>Email: {data?.email}</p>
-          <p>Address: {data?.address}</p>
+          <p>User role: {result?.role}</p>
+          <p>Email: {result?.email}</p>
+          <p>Address: {result?.address}</p>
         </div>
       </div>
       {isLoading || loading ? <Loader /> : ''}

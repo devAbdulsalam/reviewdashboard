@@ -32,6 +32,7 @@ const EditListing = () => {
   useEffect(() => {
     if (data) {
       console.log(data);
+      navigate(`/listings/${id}/edit-listing`);
     }
     if (error || isError) {
       const message = getError(error);
